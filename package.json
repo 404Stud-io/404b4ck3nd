@@ -15,11 +15,12 @@
   "author": "404 Studio",
   "license": "ISC",
   "bugs": {
-    "url": ""
+    "url": "https://github.com/404Stud-io/404b4ck3nd/issues"
   },
-  "homepage": "",
+  "homepage": "https://github.com/404Stud-io/404b4ck3nd#readme",
   "dependencies": {
     "@hapi/boom": "^9.1.0",
+    "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",

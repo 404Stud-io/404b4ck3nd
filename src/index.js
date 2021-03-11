@@ -1,9 +1,15 @@
 const express = require('express');
-const app = express();
-require('./db');
 const cors = require('cors');
 const helmet = require('helmet');
-const router = require('./api/routes/routes');
+
+const {createRoles} = require('./libs/initialSetup')
+
+const authRoutes = require('./routes/auth.routes')
+
+const app = express();
+require('./db');
+createRoles();
+
 const {
     logErrors,
     errorHandler,
@@ -19,13 +25,13 @@ app.use(express.urlencoded({ extended: true }));
 // Middlewares
 app.use(cors());
 app.use(helmet());
-if (config.dev) {
+if (config.DEV) {
     const morgan = require('morgan');
     app.use(morgan('dev'));
 }
 
 // Routes
-router(app);
+app.use('/api/auth', authRoutes);
 
 // Error 404
 app.use(notFoundHandler);
@@ -35,9 +41,6 @@ app.use(logErrors);
 app.use(wrapErrors);
 app.use(errorHandler);
 
-
-
-
-app.listen(config.port, () => {
-    console.log(`Listening on: http://localhost:${config.port}`);
+app.listen(config.PORT, () => {
+    console.log(`Listening on: http://localhost:${config.PORT}`);
 })
