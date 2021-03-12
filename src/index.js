@@ -2,9 +2,11 @@ const express = require('express');
 const cors = require('cors');
 const helmet = require('helmet');
 
-const {createRoles} = require('./libs/initialSetup')
+const {createRoles} = require('./libs/initialSetup');
 
-const authRoutes = require('./routes/auth.routes')
+const authRoutes = require('./routes/auth.routes');
+const usersRoutes = require('./routes/users.routes');
+const servicesRoutes = require('./routes/services.routes');
 
 const app = express();
 require('./db');
@@ -32,6 +34,8 @@ if (config.DEV) {
 
 // Routes
 app.use('/api/auth', authRoutes);
+app.use('/api/users', usersRoutes);
+app.use('/api/services', servicesRoutes);
 
 // Error 404
 app.use(notFoundHandler);
