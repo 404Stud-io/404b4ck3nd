@@ -8,6 +8,7 @@ const authRoutes = require('./routes/auth.routes');
 const usersRoutes = require('./routes/users.routes');
 const servicesRoutes = require('./routes/services.routes');
 const mailerRoutes = require('./routes/mailer.routes');
+const comboServiceRoutes = require('./routes/comboService.routes');
 
 const app = express();
 require('./db');
@@ -38,6 +39,7 @@ app.use('/api/auth', authRoutes);
 app.use('/api/users', usersRoutes);
 app.use('/api/services', servicesRoutes);
 app.use('/api/submit', mailerRoutes);
+app.use('/api/comboService', comboServiceRoutes);
 
 // Error 404
 app.use(notFoundHandler);
