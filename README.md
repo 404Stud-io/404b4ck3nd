@@ -1,6 +1,9 @@
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/Naereen/StrapDown.js/graphs/commit-activity)
 [![GitHub license](https://img.shields.io/github/license/Naereen/StrapDown.js.svg)](https://github.com/Naereen/StrapDown.js/blob/master/LICENSE)
 
+## License 📄
+[Documentation](https://documenter.getpostman.com/view/12403851/Tz5qbHq8)
+
 ## Packages that are used 📦
 - express
 - @hapi/boom
@@ -10,6 +13,8 @@
 - joi
 - jsonwebtoken
 - mongoose
+- bcryptjs
+- nodemailer
 
 ### Dev Dependencies 👩🏾‍💻
 - eslint
