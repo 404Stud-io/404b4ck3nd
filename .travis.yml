@@ -1,0 +1,23 @@
+language: node_js
+node_js:
+  - "14"
+git:
+  depth: 3
+script:
+  - yarn test
+notifications:
+  email:
+    reciepents:
+      - me@carlosvldz.com
+      - psialfredomtz@gmail.com
+      - jcamiloguerrerog@gmail.com
+    on_success: always
+    on_failure: always
+deploy:
+  provide: heroku
+  skip-cleanup: true
+  keep-history: true
+  api_key: $API_TOKEN
+  app: server-404
+  on:
+    repo: 404Stud-io/404b4ck3nd

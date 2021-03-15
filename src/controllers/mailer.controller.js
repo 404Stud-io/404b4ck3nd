@@ -2,15 +2,15 @@ const nodemailer = require('nodemailer');
 const { config } = require('../config/index');
 
 exports.transporter = async (req, res) => {
-    const { name, email, message } = req.body;
+    const { name, subject, email } = req.body;
 
     contentHTML = `
         <h1>User Information</h1>
         <ul>
             <li>Username: ${name}</li>
-            <li>User Email: ${email}</li>
+            <li>Subject: ${subject}</li>
         </ul>
-        <p>${message}</p>
+        <p>${email}</p>
     `;
 
     let transporter = nodemailer.createTransport({
